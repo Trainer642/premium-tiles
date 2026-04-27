@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Tiles — Premium Ceramics & Tiles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "background": "#fdf8f8", "primary-container": "#2c2c2c",
+        "surface-container-high": "#ebe7e7", "surface-container-low": "#f7f3f2",
+        "surface-variant": "#e5e2e1", "on-surface-variant": "#444748",
+        "surface": "#fdf8f8", "secondary": "#7c5730", "on-surface": "#1c1b1b",
+        "outline-variant": "#c4c7c7", "on-primary": "#ffffff",
+        "surface-container": "#f1edec", "on-background": "#1c1b1b",
+        "outline": "#747878", "primary": "#171818", "surface-tint": "#5f5e5e",
+        "on-secondary": "#ffffff"
+      },
+      spacing: { "container-max": "1440px", "base": "8px", "section-gap": "128px", "gutter": "32px", "margin-x": "64px" },
+      fontFamily: { "display-xl": ["Noto Serif"], "body-md": ["Manrope"], "headline-md": ["Noto Serif"], "label-caps": ["Manrope"], "body-lg": ["Manrope"], "headline-lg": ["Noto Serif"] },
+      fontSize: {
+        "display-xl": ["80px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "0.01em", fontWeight: "400" }],
+        "label-caps": ["12px", { lineHeight: "1.2", letterSpacing: "0.15em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "400" }]
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased">
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 w-full z-50 border-b border-zinc-900/10 transition-all duration-300 bg-white/90 backdrop-blur-md">
+  <div class="flex justify-between items-center px-8 md:px-16 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-zinc-900" style="font-family:'Noto Serif',serif;">Premium Tiles</a>
+    <ul class="hidden md:flex gap-8 font-label-caps text-label-caps uppercase">
+      <li><a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_ceramics">Ceramics</a></li>
+      <li><a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_facade">Facade</a></li>
+      <li><a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_mosaic">Mosaic</a></li>
+      <li><a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_sanitary">Sanitary</a></li>
+      <li><a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_wallpapers">Wallpapers</a></li>
+      <li><a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors duration-300" data-i18n="nav_references">References</a></li>
+    </ul>
+    <div class="hidden md:flex items-center gap-5">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 font-label-caps text-label-caps">
+        <button class="lang-btn px-1.5 py-0.5 text-on-background font-semibold hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+      </div>
+      <a href="#contact" class="bg-primary text-on-primary px-6 py-3 font-label-caps text-label-caps hover:bg-secondary transition-colors duration-300" data-i18n="nav_quote">Get a Quote</a>
+    </div>
+    <button id="menu-toggle" class="md:hidden p-2" aria-label="Menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-zinc-100 px-8 pb-6">
+    <ul class="flex flex-col gap-5 pt-5 font-label-caps text-label-caps uppercase">
+      <li><a href="ceramics.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_ceramics">Ceramics</a></li>
+      <li><a href="ceramics.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_facade">Facade</a></li>
+      <li><a href="ceramics.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_sanitary">Sanitary</a></li>
+      <li><a href="references.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_references">References</a></li>
+      <li>
+        <div class="flex gap-3 py-1">
+          <button class="lang-btn font-semibold text-on-background hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+        </div>
+      </li>
+      <li><a href="#contact" class="bg-primary text-white px-6 py-3 inline-block text-center" data-i18n="nav_quote">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="pt-[76px]">
+
+  <!-- HERO -->
+  <section class="relative h-[88vh] min-h-[600px] w-full flex items-center bg-zinc-900 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-55" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtxGwKbSoktTWMI7NQMsA46s3bOzPJL_vJQxDTlm4pvD5SKV7R0icQRfNTP6giFFPKmVrfiu66G1bm7vPNhblAG3g78KKBbz-lsnSuxX_gziXQKeKjcEHE_YtUi2_OM5akU-WaGDn0b8VfrFu7zxhy48gsX6MMDQeCmkuR2WAv-jg9CSN77hRoz0JpuqhJPB1U9BxlC2bwBE1PzAu9VqTjdt33bIocnkTBGsW29nvhj-fckLl2ZxGUCXX_erXUxwaOuqDjOVI1Cc0');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16 w-full relative z-10">
+      <div class="max-w-2xl">
+        <p class="font-label-caps text-label-caps text-white/60 mb-6 tracking-widest uppercase" data-i18n="hero_label">Premium Ceramic Surfaces</p>
+        <h1 class="font-display-xl text-white mb-8 leading-[1.05]" style="font-family:'Noto Serif',serif; font-size:clamp(40px,6vw,80px); letter-spacing:-0.02em;" data-i18n="hero_title">Premium Ceramics &amp; Tiles for Every Space</h1>
+        <div class="flex flex-wrap gap-4">
+          <a href="ceramics.html" class="bg-white text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-[#f0eded] transition-colors" data-i18n="hero_catalog">Browse Catalog</a>
+          <a href="#contact" class="border border-white/40 text-white px-8 py-4 font-label-caps text-label-caps hover:bg-white/10 transition-colors" data-i18n="hero_contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-surface py-14 border-b border-outline-variant/30">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center text-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings:'FILL' 0,'wght' 200">verified</span>
+          <p class="font-label-caps text-label-caps text-on-surface-variant" data-i18n="trust_verified">Official Brand Representative</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings:'FILL' 0,'wght' 200">public</span>
+          <p class="font-label-caps text-label-caps text-on-surface-variant" data-i18n="trust_quality">European &amp; Asian Quality</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings:'FILL' 0,'wght' 200">architecture</span>
+          <p class="font-label-caps text-label-caps text-on-surface-variant" data-i18n="trust_design">Design + Installation</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings:'FILL' 0,'wght' 200">workspace_premium</span>
+          <p class="font-label-caps text-label-caps text-on-surface-variant" data-i18n="trust_experience">20+ Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="py-32 bg-background">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+      <h2 class="font-headline-lg text-headline-lg mb-16 text-center text-primary" style="font-family:'Noto Serif',serif;" data-i18n="section_collections">Collections</h2>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:h-[760px]">
+        <a href="ceramics.html" class="md:col-span-7 relative group overflow-hidden bg-surface-container h-[380px] md:h-auto block">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxbr0krCrtvkBCbkds46PhneUeUUIxSdffhXSEL0i_Z8ZRNkFxImOjyh1AfWjK8G_nC3dxrQPYZ55KwBIwcnIR3ZjUiwhvTF1aHeBZ25SxrT8V9xD8z3WipoQTRzwlwEX6iX3YAB8aDsnLfgNLhA-u0y_rW8lCozjcLpFpZvcEKPqA30GpWeoUGHqWzfUfel_O_ffqT0Nbddv6gfBrcht9GCSdGgdYIRSm9vRRm20xbLw8Auifq3ibm-0EgQAQ90FdGHs7Oy6VNQE" alt="Ceramics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <h3 class="font-headline-md text-headline-md mb-3" style="font-family:'Noto Serif',serif;" data-i18n="collection_ceramics">Ceramics</h3>
+            <span class="inline-flex items-center gap-2 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span data-i18n="ref_view_all">View All</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </span>
+          </div>
+        </a>
+        <div class="md:col-span-5 grid grid-rows-2 gap-2">
+          <a href="ceramics.html" class="relative group overflow-hidden bg-surface-container h-[280px] md:h-auto block">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoXzoO8jr3a4ihar99AJxG7NXrJ0lTGBOeenKldkxIVl49m4IyWjuDCk91TTWW8MSF9g7knevO54IGYSTb0Ll76qTPSWTeoxe1tqecBynKKVXOjMiV84JvINxt9qtGS8ckR0YiAIVBf3JeCFk28J6YGlsaadR7k8SfVFqzR3jP_8Gk34DAIpT3P9q7uHjHsibIOaEssU-0elxEnGlkOtBtpTMLVLoIWQaotgax4z1YzAFD7fyaPIJ0sLsUSr9iBRAvuw714aHPWmA" alt="Sanitary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-white">
+              <h3 class="font-headline-md text-[26px] mb-2" style="font-family:'Noto Serif',serif;" data-i18n="collection_sanitary">Sanitary Ware</h3>
+              <span class="inline-flex items-center gap-2 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span data-i18n="ref_view_all">View All</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+          <a href="ceramics.html" class="relative group overflow-hidden bg-surface-container h-[280px] md:h-auto block">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEbOy15JTlQ1XiS_9ko4Ijpjq3KWgBcE63By4K-VvRIF7B3yajgLa1ayK69FC9wnUNeBn0Vcolteo1yeTBn9DdB1yUNxqEeoSMgD7rSszTx1nkxrsBURdLMp7vLxWuEoIkHDgF0CnFgAMNYD-vPNfn3Yp70PPA5gJrzFOfUpneba0skWgUvfkWORvCkvhd0AAI6vKx7z9WaBLDA0wu2U-IVWXblnELynO4SjwxSxY2mo_NAQhwqo8RRfBBaSi7yes076FDWXUZpYo" alt="Facade" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-8 left-8 text-white">
+              <h3 class="font-headline-md text-[26px] mb-2" style="font-family:'Noto Serif',serif;" data-i18n="collection_facade">Facade Tiles</h3>
+              <span class="inline-flex items-center gap-2 font-label-caps text-label-caps opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span data-i18n="ref_view_all">View All</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="mt-12 text-center">
+        <a href="ceramics.html" class="font-label-caps text-label-caps border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors uppercase tracking-widest" data-i18n="collections_view_all">View All Collections</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="py-16 bg-surface-container border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+      <p class="font-label-caps text-label-caps text-center text-outline mb-10 uppercase tracking-widest" data-i18n="brands_label">Official Representative Of</p>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50 hover:opacity-70 transition-opacity">
+        <span class="text-2xl md:text-3xl tracking-widest text-on-surface-variant" style="font-family:'Noto Serif',serif;">KEOPE</span>
+        <span class="text-2xl md:text-3xl tracking-widest text-on-surface-variant" style="font-family:'Noto Serif',serif;">SUPERGRES</span>
+        <span class="text-2xl md:text-3xl tracking-widest text-on-surface-variant" style="font-family:'Noto Serif',serif;">KENZAI</span>
+        <span class="text-2xl md:text-3xl tracking-widest text-on-surface-variant" style="font-family:'Noto Serif',serif;">ROSE MOSAIC</span>
+        <span class="text-2xl md:text-3xl tracking-widest text-on-surface-variant" style="font-family:'Noto Serif',serif;">DANIEL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES TEASER -->
+  <section class="py-32 bg-background">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+      <div class="flex justify-between items-end mb-16">
+        <h2 class="font-headline-lg text-headline-lg text-primary" style="font-family:'Noto Serif',serif;" data-i18n="section_selected_works">Selected Works</h2>
+        <a href="references.html" class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors flex items-center gap-2 uppercase tracking-widest">
+          <span data-i18n="ref_view_all">View All</span> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 h-auto md:h-[480px]">
+        <a href="references.html" class="group relative overflow-hidden bg-surface-container-high block">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU370MKnh3UlRzWaw7ZfBplXNoXpQurbnchLrHyhw5zP4xiKhI5nhiUYqnr8eSWDdkod-27rBQujPciSvaORRJh-QLXfSoTFFDzZ1Ie8CM28O0PuaTfzwNLXUjsm2SRQ_rzMIZzUCbRMRQEnS5Iw6itFIwz8fR0rwvWXM0At5ur-PN6uLJN9QvAG03MSVDZtxHYE4XwqunTxn9QRG2KdBKuAa2PWyZbFDYtMJZ7Jz--A8-Mj9FGar7Tf_kF3wGJ06gHJuvIwJQNkk" alt="Sea Breeze Villa" class="w-full h-64 md:h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+            <h3 class="font-headline-md text-[22px] text-white mb-1" style="font-family:'Noto Serif',serif;" data-i18n="proj_sea_breeze">Sea Breeze Villa</h3>
+            <p class="font-label-caps text-label-caps text-white/70 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> <span data-i18n="footer_address">Baku, Azerbaijan</span></p>
+          </div>
+        </a>
+        <a href="references.html" class="group relative overflow-hidden bg-surface-container-high block">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1pfouYGB8CfTMLmtQviArVdpjaKvUwtnjODIfF8saihvZWupA_PmhuD7Vzg1BNjIpeZQ9ujfq7Cmx_VlZK1eg3OjTMz9TZlcu4qop55c06sOBqOMIc0g1zj2OSYg65p77_7exhgshIVH9APfUv2oyBP-EkessmeNe5PnHKFFjv6YiETSLeU8Z9SAWm7byoZLP2RvwqBcu7-5qOvbC6SjumHCAywgfmIECIFoCwMLdC15NFm2vaVj2S5Yee6WYhYThDkyuJUYv3co" alt="Flame Towers Penthouse" class="w-full h-64 md:h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+            <h3 class="font-headline-md text-[22px] text-white mb-1" style="font-family:'Noto Serif',serif;" data-i18n="proj_flame">Flame Towers Penthouse</h3>
+            <p class="font-label-caps text-label-caps text-white/70 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> <span data-i18n="footer_address">Baku, Azerbaijan</span></p>
+          </div>
+        </a>
+        <a href="references.html" class="group relative overflow-hidden bg-surface-container-high block">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUlAinfDFuG8JK6OW2aVHJJp157qpjduUFrHnMoVIXNagF4YVcXUNIoJ139XXFb9Ip-DiXe3m9HG18Eg0RHBxDZ0u44EbBwW9SFGQ6oSb4LHkhsehJMvNyd8YnMEqzSZF5VrD_a1lZpv0FcvH4N2ulE3cF57hkUAdSl_IvVIgPvTItiqHgTK-fBE_3jQFpnjs1Oe-sGkNF6ryxTIEyvmeTvnJBZvZiwy2AMM79xSl0WywGZTjOum8vxScsMb6ceX0DfGyzOjUeu14" alt="Port Baku Residences" class="w-full h-64 md:h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+            <h3 class="font-headline-md text-[22px] text-white mb-1" style="font-family:'Noto Serif',serif;" data-i18n="proj_port_baku">Port Baku Residences</h3>
+            <p class="font-label-caps text-label-caps text-white/70 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> <span data-i18n="footer_address">Baku, Azerbaijan</span></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" class="py-32 bg-primary">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-16 text-center">
+      <h2 class="font-headline-lg text-headline-lg text-white mb-6" style="font-family:'Noto Serif',serif;" data-i18n="cta_title">Start Your Project</h2>
+      <p class="font-body-lg text-body-lg text-white/60 mb-12 max-w-xl mx-auto" data-i18n="cta_desc">Our specialists are ready to help you select the perfect ceramic surfaces for your architectural vision.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:info@azkeramika.com" class="bg-white text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-[#f0eded] transition-colors" data-i18n="cta_email">Email Us</a>
+        <a href="tel:+994" class="border border-white/30 text-white px-8 py-4 font-label-caps text-label-caps hover:bg-white/10 transition-colors" data-i18n="cta_call">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/994" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform z-50 flex items-center justify-center" aria-label="WhatsApp">
+  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- FOOTER -->
+<footer class="bg-zinc-50 border-t border-zinc-900/5">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-8 md:px-16 py-20 max-w-[1920px] mx-auto">
+    <div class="md:col-span-2">
+      <a href="index.html" class="text-xl font-bold text-zinc-900 tracking-tighter block mb-4">Premium Tiles</a>
+      <p class="font-label-caps text-label-caps text-zinc-500 normal-case tracking-normal leading-relaxed max-w-xs" data-i18n="footer_tagline">Curating the finest ceramic surfaces for visionary architectural spaces.</p>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_collections">Collections</span>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_ceramics">Ceramics</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_sanitary">Sanitary</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_wallpapers">Wallpapers</a>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_company">Company</span>
+      <a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_references">References</a>
+      <a href="#contact" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_contact">Contact</a>
+      <a href="#" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="border-t border-zinc-900/5 px-8 md:px-16 py-6 flex justify-between items-center max-w-[1920px] mx-auto">
+    <span class="font-label-caps text-label-caps text-zinc-400" data-i18n="footer_copyright">© 2024 Premium Tiles. Architectural Excellence.</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('shadow-sm', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>

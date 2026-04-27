@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elements Design — Keope | Premium Tiles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "background": "#fdf8f8", "primary-container": "#2c2c2c",
+        "surface-container-high": "#ebe7e7",
+        "surface-variant": "#e5e2e1", "on-surface-variant": "#444748",
+        "surface": "#fdf8f8", "secondary": "#7c5730", "on-surface": "#1c1b1b",
+        "outline-variant": "#c4c7c7", "on-primary": "#ffffff",
+        "surface-container": "#f1edec", "on-background": "#1c1b1b",
+        "outline": "#747878", "primary": "#171818", "surface-tint": "#5f5e5e",
+        "on-secondary": "#ffffff"
+      },
+      spacing: { "container-max": "1440px", "base": "8px", "section-gap": "128px", "gutter": "32px", "margin-x": "64px" },
+      fontFamily: { "display-xl": ["Noto Serif"], "body-md": ["Manrope"], "headline-md": ["Noto Serif"], "label-caps": ["Manrope"], "body-lg": ["Manrope"], "headline-lg": ["Noto Serif"] },
+      fontSize: {
+        "display-xl": ["80px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "0.01em", fontWeight: "400" }],
+        "label-caps": ["12px", { lineHeight: "1.2", letterSpacing: "0.15em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "400" }]
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+  #lightbox { display: none; }
+  #lightbox.open { display: flex; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-900/10">
+  <div class="flex justify-between items-center px-8 md:px-16 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-zinc-900" style="font-family:'Noto Serif',serif;">Premium Tiles</a>
+    <nav class="hidden md:flex gap-8 font-label-caps text-label-caps uppercase">
+      <a href="ceramics.html" class="text-zinc-900 border-b border-zinc-900 pb-1 hover:text-[#A67C52] transition-colors" data-i18n="nav_ceramics">Ceramics</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_facade">Facade</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_mosaic">Mosaic</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_sanitary">Sanitary</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_wallpapers">Wallpapers</a>
+      <a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_references">References</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-5">
+      <div class="flex items-center gap-1 font-label-caps text-label-caps">
+        <button class="lang-btn px-1.5 py-0.5 text-on-background font-semibold hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+      </div>
+      <a href="index.html#contact" class="bg-[#2C2C2C] text-white px-6 py-3 font-label-caps text-label-caps hover:bg-[#A67C52] transition-colors duration-300" data-i18n="nav_quote">Get a Quote</a>
+    </div>
+    <button id="menu-toggle" class="md:hidden p-2"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-zinc-100 px-8 pb-6">
+    <ul class="flex flex-col gap-5 pt-5 font-label-caps text-label-caps uppercase">
+      <li><a href="ceramics.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_ceramics">Ceramics</a></li>
+      <li><a href="references.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_references">References</a></li>
+      <li>
+        <div class="flex gap-3 py-1">
+          <button class="lang-btn font-semibold text-on-background hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+        </div>
+      </li>
+      <li><a href="index.html#contact" class="bg-primary text-white px-6 py-3 inline-block" data-i18n="nav_quote">Get a Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="pt-28 pb-32">
+  <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant uppercase mb-12">
+      <a href="index.html" class="hover:text-secondary transition-colors" data-i18n="bc_home">Home</a>
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      <a href="ceramics.html" class="hover:text-secondary transition-colors" data-i18n="bc_ceramics">Ceramics</a>
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      <span class="text-on-background" data-i18n="bc_product_name">Elements Design</span>
+    </div>
+
+    <!-- Product layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+      <!-- Gallery -->
+      <div class="lg:col-span-8 flex flex-col gap-6">
+        <div class="relative w-full aspect-[4/3] bg-surface-container-high overflow-hidden group">
+          <img id="main-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD25gv7bKFTbnKBEzq8J33-jgsUG0-h0THRNRTsJ-b87BquKYjk9lgCeczh9dJ85L200qmFBG86oXCIyvl6LyR2HEEPovbVFgA-bmSuucXxDn1neCukzQNzLUOsBEiYUGg-mu2EFUXGP92B6-O61JndJNwRvLtY8J0A_NNxmtYi9eQbqnXvDXZNfHZloadQ7ziAC-JrXeu2JTq4HalouSkq_sywbJLtVYFpiUbPAgyFsTzi1y8Ctov2IBPGLPvcRHS1ri9oDMBD_SA" alt="Elements Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"/>
+          <button id="zoom-btn" class="absolute bottom-6 right-6 w-12 h-12 bg-white/90 backdrop-blur flex items-center justify-center shadow-sm hover:bg-white transition-colors">
+            <span class="material-symbols-outlined text-primary">zoom_in</span>
+          </button>
+        </div>
+        <div class="flex gap-4 overflow-x-auto hide-scrollbar py-1">
+          <button class="thumb flex-shrink-0 w-28 aspect-square border-2 border-primary overflow-hidden" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuD25gv7bKFTbnKBEzq8J33-jgsUG0-h0THRNRTsJ-b87BquKYjk9lgCeczh9dJ85L200qmFBG86oXCIyvl6LyR2HEEPovbVFgA-bmSuucXxDn1neCukzQNzLUOsBEiYUGg-mu2EFUXGP92B6-O61JndJNwRvLtY8J0A_NNxmtYi9eQbqnXvDXZNfHZloadQ7ziAC-JrXeu2JTq4HalouSkq_sywbJLtVYFpiUbPAgyFsTzi1y8Ctov2IBPGLPvcRHS1ri9oDMBD_SA">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB505DRtYzQ7JtUUVUABfM-D4mWWFj46xQagw_PX2YBfNVvir20BVzbfcJjU2suTaiOxq5P9mwg2gMz1OlK0bQrpYl2RU7JHOOB9V-XaVH0yEa30aj7Tt5J3p-3ofF6u6G9KE--44aZvycDXTSKdrrIOFXXbsfUpi8FnCEaW7Xw-u0Mqa2Z7utuS00c8wHFdeSTJJ06rIsXL3oAU3yNTOoPaf-YETnEuEklPcyT4kCz9r1FGLcYRr6ksoQjtXP5qymXjgsfB67coeU" alt="" class="w-full h-full object-cover"/>
+          </button>
+          <button class="thumb flex-shrink-0 w-28 aspect-square border border-outline-variant hover:border-primary transition-colors overflow-hidden opacity-70 hover:opacity-100" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxHvW8_ccuVtgwk4T1xHcqY30j3-JZg--Ex576fHueOimtaxfSYBi7ETc-XRHLJu76XfRmfRKYzlgPMQ_Z5zJAHzUPZtd0M44Y5IBwecn1NdRjWxvXk9Zd1xMq095KeJfbMosDksE-SXxaD2nlPZtgXXLqpB__AQdSlm4M0bjwSw6XLwbqd7N_EvkD2uzCUhi7-BHNLCSup6qDPbSHePWoqbPa_Cca3vxNxBVPP0Ct6XgbDVrXa1ZLhC0w8M_nuYw5P1jxVGLdepY">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxHvW8_ccuVtgwk4T1xHcqY30j3-JZg--Ex576fHueOimtaxfSYBi7ETc-XRHLJu76XfRmfRKYzlgPMQ_Z5zJAHzUPZtd0M44Y5IBwecn1NdRjWxvXk9Zd1xMq095KeJfbMosDksE-SXxaD2nlPZtgXXLqpB__AQdSlm4M0bjwSw6XLwbqd7N_EvkD2uzCUhi7-BHNLCSup6qDPbSHePWoqbPa_Cca3vxNxBVPP0Ct6XgbDVrXa1ZLhC0w8M_nuYw5P1jxVGLdepY" alt="" class="w-full h-full object-cover"/>
+          </button>
+          <button class="thumb flex-shrink-0 w-28 aspect-square border border-outline-variant hover:border-primary transition-colors overflow-hidden opacity-70 hover:opacity-100" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuACRSL268MwtoPEwauMS3PiFzg1ih7TEB4BLZ33tShPzw3zFfiWWD-4z2L2q-3IPpq3Ox1mOc-dtoZEtrKTLoe_BKsjw8VP4l0f8CcMo5tkfFU_juCLOAAvX7bSqxz3a9fsW8gZMhjGg-GJNvQAwMSbZ9rOSOTtzTBMhxGLzC3T-389eKj4AaGqwW_hUgDep7IthK-a31N93F_zPv0q2G9fOgkqNIJoaq92l_snkZDPxooPZHEUDe_BcSkF-RUr9iwlh-XUio-pc4U">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuACRSL268MwtoPEwauMS3PiFzg1ih7TEB4BLZ33tShPzw3zFfiWWD-4z2L2q-3IPpq3Ox1mOc-dtoZEtrKTLoe_BKsjw8VP4l0f8CcMo5tkfFU_juCLOAAvX7bSqxz3a9fsW8gZMhjGg-GJNvQAwMSbZ9rOSOTtzTBMhxGLzC3T-389eKj4AaGqwW_hUgDep7IthK-a31N93F_zPv0q2G9fOgkqNIJoaq92l_snkZDPxooPZHEUDe_BcSkF-RUr9iwlh-XUio-pc4U" alt="" class="w-full h-full object-cover"/>
+          </button>
+          <button class="thumb flex-shrink-0 w-28 aspect-square border border-outline-variant hover:border-primary transition-colors overflow-hidden opacity-70 hover:opacity-100" data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgS45bKotgNqfp2vovZ6lm30s7LBb5WNSDtCZ-zohCL5VV869qHoHKBg1SezRmpvIRSiu0EMQuL6kl1KGgOhVA5pmeFcqVOsCB-yVvtRK60OsUjO4UNwttyWWynV7VzjAlmhdp5873bSa6r26P_oqBXFNDQUtsoX2VnM-SdR94SZ_dZKK99erD8qvf_ogPrgit8UK35mArbLSnkiJcY6ikGGhDHtnfj01buo3aUtZ5xnM5ad-_qoEvPxlPB9l5TtiGRaixgXS90go">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgS45bKotgNqfp2vovZ6lm30s7LBb5WNSDtCZ-zohCL5VV869qHoHKBg1SezRmpvIRSiu0EMQuL6kl1KGgOhVA5pmeFcqVOsCB-yVvtRK60OsUjO4UNwttyWWynV7VzjAlmhdp5873bSa6r26P_oqBXFNDQUtsoX2VnM-SdR94SZ_dZKK99erD8qvf_ogPrgit8UK35mArbLSnkiJcY6ikGGhDHtnfj01buo3aUtZ5xnM5ad-_qoEvPxlPB9l5TtiGRaixgXS90go" alt="" class="w-full h-full object-cover"/>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="lg:col-span-4 flex flex-col pt-2">
+        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-2" data-i18n="product_brand">Keope</span>
+        <h1 class="font-headline-lg text-headline-lg text-primary mb-6" style="font-family:'Noto Serif',serif;" data-i18n="product_name">Elements Design</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10" data-i18n="product_desc">Inspired by the pure, essential nature of resin and concrete. Elements Design offers a minimalist canvas with delicate nuances, perfect for continuous surfaces in contemporary architectural spaces.</p>
+
+        <!-- Color -->
+        <div class="mb-8 border-t border-outline-variant/30 pt-8">
+          <div class="flex justify-between items-center mb-4">
+            <span class="font-label-caps text-label-caps uppercase" data-i18n="product_color">Color</span>
+            <span id="color-name" class="font-body-md text-body-md text-on-surface-variant">Silver</span>
+          </div>
+          <div class="flex gap-3">
+            <button title="Silver" class="color-btn w-10 h-10 bg-[#E5E4E2] border-2 border-primary shadow-sm" data-color="Silver"></button>
+            <button title="Pearl" class="color-btn w-10 h-10 bg-[#D1CFCB] border border-outline-variant hover:border-primary transition-colors shadow-sm" data-color="Pearl"></button>
+            <button title="Grey" class="color-btn w-10 h-10 bg-[#8A8682] border border-outline-variant hover:border-primary transition-colors shadow-sm" data-color="Grey"></button>
+            <button title="Dark" class="color-btn w-10 h-10 bg-[#3C3A38] border border-outline-variant hover:border-primary transition-colors shadow-sm" data-color="Dark"></button>
+            <button title="Ivory" class="color-btn w-10 h-10 bg-[#DBCBB4] border border-outline-variant hover:border-primary transition-colors shadow-sm" data-color="Ivory"></button>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div class="mb-12">
+          <span class="font-label-caps text-label-caps uppercase block mb-4" data-i18n="product_format">Format (cm)</span>
+          <div class="grid grid-cols-2 gap-3">
+            <button class="size-btn py-3 px-4 border border-primary text-primary font-body-md text-center hover:bg-surface-container transition-colors">120×120</button>
+            <button class="size-btn py-3 px-4 border border-outline-variant text-on-surface-variant font-body-md text-center hover:border-primary transition-colors">60×120</button>
+            <button class="size-btn py-3 px-4 border border-outline-variant text-on-surface-variant font-body-md text-center hover:border-primary transition-colors">60×60</button>
+            <button class="size-btn py-3 px-4 border border-outline-variant text-on-surface-variant font-body-md text-center hover:border-primary transition-colors">30×60</button>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col gap-4">
+          <a href="index.html#contact" class="w-full bg-primary-container text-on-primary py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-secondary transition-colors duration-300 flex items-center justify-center gap-2 group">
+            <span data-i18n="btn_quote">Request a Quote</span>
+            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+          <button class="w-full border border-outline text-primary py-4 font-label-caps text-label-caps uppercase tracking-widest hover:border-primary hover:bg-surface-container transition-colors duration-300 flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+            <span data-i18n="btn_sample">Order Sample</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Specs -->
+    <div class="mt-32 border-t border-outline-variant/30 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <h2 class="font-headline-md text-headline-md text-primary mb-4" style="font-family:'Noto Serif',serif;" data-i18n="specs_title">Technical Specifications</h2>
+          <p class="font-body-md text-on-surface-variant mb-8" data-i18n="specs_desc">Comprehensive details for architectural integration.</p>
+          <a href="#" class="inline-flex items-center gap-3 text-secondary hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest group border-b border-secondary/30 hover:border-primary pb-1">
+            <span class="material-symbols-outlined">picture_as_pdf</span>
+            <span data-i18n="specs_download">Download Technical Sheet</span>
+            <span class="material-symbols-outlined text-[16px] group-hover:translate-y-1 transition-transform">download</span>
+          </a>
+        </div>
+        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_material">Material</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_material_val">Porcelain Stoneware</span>
+          </div>
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_finish">Finish</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_finish_val">Matt / R10</span>
+          </div>
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_thickness">Thickness</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_thickness_val">9mm / 20mm (Outdoor)</span>
+          </div>
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_rectified">Rectified</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_rectified_val">Yes</span>
+          </div>
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_application">Application</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_application_val">Floor &amp; Wall / Indoor &amp; Outdoor</span>
+          </div>
+          <div class="border-b border-outline-variant/30 pb-4">
+            <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1" data-i18n="spec_variation">Variation</span>
+            <span class="block font-body-md text-primary" data-i18n="spec_variation_val">V2 — Slight Variation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="mt-32">
+      <div class="flex justify-between items-end mb-12 border-b border-outline-variant/30 pb-4">
+        <h2 class="font-headline-md text-headline-md text-primary" style="font-family:'Noto Serif',serif;" data-i18n="related_title">You May Also Like</h2>
+        <a href="ceramics.html" class="font-label-caps text-label-caps text-secondary uppercase hover:text-primary transition-colors flex items-center gap-1 tracking-widest">
+          <span data-i18n="ref_view_all">View All</span> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="product.html" class="group block">
+          <div class="aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTLvH0OK1xh2oeKXF8KDw8VXdvzVrtTfiAOubILlGlrw8VTQ41t9d-i8NuiRnp7Dn96U4v_qtDMUZ-tB1nd8t47mg0umDex-2OQRdFRPav4wiR0gfIm55gjhD8NokWAXa0hF-fgfsGrxXmDkiUbtXN4Rn6SnbGlLB43FT2fQdQo9pvU8jY65YTl9EJALfcU27HZj5JGdPLdY2j-QXltzQfX48GK4A0_z6dWVgDJMy0ObXpWCOaf0nhZYLdBNApy1ydzJA32bS5wS0" alt="Moov" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+          <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Keope</span>
+          <h3 class="font-body-lg text-primary group-hover:text-secondary transition-colors" style="font-family:'Noto Serif',serif;">Moov</h3>
+        </a>
+        <a href="product.html" class="group block">
+          <div class="aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlcZg9YXkDHaBnBYM7qDUESAEUJZukBoLUhsFlxZ4auoMr8yg0A70mSQJ0C_KaUM4KVTYAnYBm8XFThE3LvWFAzcBsfPQnhsMu7D6CZZMvpTurbtP8VP-u_UeP2SMu6hW5yTwyeYhshOcVnjGeqRorvRkBTHWoEcU7zIIZYMDsrZTDtUDoQB-VRjUipPc-qLrPLP29Zv_NXDRLzPv0loFpqaVVCLSIW7RvGCCyyX2iwiXmAwPUKSxcdgCqmYSeuExM9lhgHCOLUJM" alt="Stones & More" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+          <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Florim</span>
+          <h3 class="font-body-lg text-primary group-hover:text-secondary transition-colors" style="font-family:'Noto Serif',serif;">Stones &amp; More</h3>
+        </a>
+        <a href="product.html" class="group block">
+          <div class="aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmdGwaFgg9uLb9JeXUy2R7-lyBKycVFo176o_dR0J0DKqJM8_xNHJzdeRUU1zPxpFpaX3F44n7BjSjO6WI4hj-ZeNmGDkQCHjIjbhfMVsuKQZ5tLv4dQe3hr-Jt_0UuK0UHWNUI6o33avlKeuc_qrW_EUUVFjd98GE1S3uxygr-GMq3ENcw7YKdH6UOb9_FeH2NQQ46fN-KjAGojRfcNvb_k5klGKJGrWii_qlwxue0WlB9KWbKeJVxlW8ZHBp59nTSK8e3yzyDDA" alt="Pinch" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"/>
+          </div>
+          <span class="block font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Marazzi</span>
+          <h3 class="font-body-lg text-primary group-hover:text-secondary transition-colors" style="font-family:'Noto Serif',serif;">Pinch</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 items-center justify-center p-8">
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-[#A67C52] transition-colors">
+    <span class="material-symbols-outlined text-3xl">close</span>
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain"/>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-zinc-50 border-t border-zinc-900/5">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-8 md:px-16 py-20 max-w-[1920px] mx-auto">
+    <div class="flex flex-col gap-6">
+      <a href="index.html" class="text-xl font-bold text-zinc-900 tracking-tighter">Premium Tiles</a>
+      <p class="font-label-caps text-label-caps text-zinc-500 normal-case tracking-normal leading-relaxed" data-i18n="footer_tagline">Curating the finest ceramic surfaces for visionary architectural spaces.</p>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_collections">Collections</span>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_ceramics">Ceramics</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_sanitary">Sanitary</a>
+      <a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_references">References</a>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_company">Company</span>
+      <a href="index.html#contact" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_contact">Contact</a>
+      <a href="#" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_showroom">Showroom</span>
+      <p class="text-zinc-500 normal-case tracking-normal leading-relaxed" data-i18n="footer_address">Baku, Azerbaijan</p>
+      <a href="mailto:info@azkeramika.com" class="text-zinc-500 hover:text-[#A67C52] transition-colors normal-case tracking-normal">info@azkeramika.com</a>
+    </div>
+  </div>
+  <div class="border-t border-zinc-900/5 px-8 md:px-16 py-6 flex justify-between items-center max-w-[1920px] mx-auto">
+    <span class="font-label-caps text-label-caps text-zinc-400" data-i18n="footer_copyright">© 2024 Premium Tiles. Architectural Excellence.</span>
+    <div class="flex gap-4">
+      <a href="#" class="text-zinc-400 hover:text-[#A67C52] transition-colors"><span class="material-symbols-outlined">photo_camera</span></a>
+      <a href="mailto:info@azkeramika.com" class="text-zinc-400 hover:text-[#A67C52] transition-colors"><span class="material-symbols-outlined">mail</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+
+  // Thumbnail switching
+  const mainImg = document.getElementById('main-img');
+  document.querySelectorAll('.thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImg.src = btn.dataset.src;
+      document.querySelectorAll('.thumb').forEach(t => {
+        t.classList.remove('border-2', 'border-primary');
+        t.classList.add('border', 'border-outline-variant', 'opacity-70');
+      });
+      btn.classList.add('border-2', 'border-primary');
+      btn.classList.remove('border', 'border-outline-variant', 'opacity-70');
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('zoom-btn').addEventListener('click', () => {
+    document.getElementById('lightbox-img').src = mainImg.src;
+    lightbox.classList.add('open');
+  });
+  document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+
+  // Color selector
+  document.querySelectorAll('.color-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('color-name').textContent = btn.title;
+      document.querySelectorAll('.color-btn').forEach(b => {
+        b.classList.remove('border-2', 'border-primary');
+        b.classList.add('border', 'border-outline-variant');
+      });
+      btn.classList.add('border-2', 'border-primary');
+      btn.classList.remove('border', 'border-outline-variant');
+    });
+  });
+
+  // Size selector
+  document.querySelectorAll('.size-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.size-btn').forEach(b => {
+        b.classList.remove('border-primary', 'text-primary');
+        b.classList.add('border-outline-variant', 'text-on-surface-variant');
+      });
+      btn.classList.add('border-primary', 'text-primary');
+      btn.classList.remove('border-outline-variant', 'text-on-surface-variant');
+    });
+  });
+</script>
+</body>
+</html>

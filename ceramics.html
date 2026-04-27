@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ceramics Collection — Premium Tiles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "background": "#fdf8f8", "primary-container": "#2c2c2c",
+        "surface-container-high": "#ebe7e7",
+        "surface-variant": "#e5e2e1", "on-surface-variant": "#444748",
+        "surface": "#fdf8f8", "secondary": "#7c5730", "on-surface": "#1c1b1b",
+        "outline-variant": "#c4c7c7", "on-primary": "#ffffff",
+        "surface-container": "#f1edec", "on-background": "#1c1b1b",
+        "outline": "#747878", "primary": "#171818", "surface-tint": "#5f5e5e",
+        "on-secondary": "#ffffff"
+      },
+      spacing: { "container-max": "1440px", "base": "8px", "section-gap": "128px", "gutter": "32px", "margin-x": "64px" },
+      fontFamily: { "display-xl": ["Noto Serif"], "body-md": ["Manrope"], "headline-md": ["Noto Serif"], "label-caps": ["Manrope"], "body-lg": ["Manrope"], "headline-lg": ["Noto Serif"] },
+      fontSize: {
+        "display-xl": ["80px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-md": ["32px", { lineHeight: "1.3", letterSpacing: "0.01em", fontWeight: "400" }],
+        "label-caps": ["12px", { lineHeight: "1.2", letterSpacing: "0.15em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" }],
+        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "400" }]
+      }
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-900/10">
+  <div class="flex justify-between items-center px-8 md:px-16 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-zinc-900" style="font-family:'Noto Serif',serif;">Premium Tiles</a>
+    <nav class="hidden md:flex gap-8 font-label-caps text-label-caps uppercase">
+      <a href="ceramics.html" class="text-zinc-900 border-b border-zinc-900 pb-1 hover:text-[#A67C52] transition-colors" data-i18n="nav_ceramics">Ceramics</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_facade">Facade</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_mosaic">Mosaic</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_sanitary">Sanitary</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_wallpapers">Wallpapers</a>
+      <a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_references">References</a>
+    </nav>
+    <div class="hidden md:flex items-center gap-5">
+      <div class="flex items-center gap-1 font-label-caps text-label-caps">
+        <button class="lang-btn px-1.5 py-0.5 text-on-background font-semibold hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+        <span class="text-outline/40">|</span>
+        <button class="lang-btn px-1.5 py-0.5 text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+      </div>
+      <a href="index.html#contact" class="bg-primary-container text-on-primary px-6 py-3 font-label-caps text-label-caps hover:bg-secondary transition-colors duration-300" data-i18n="nav_quote">Get a Quote</a>
+    </div>
+    <button id="menu-toggle" class="md:hidden p-2"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-white border-t border-zinc-100 px-8 pb-6">
+    <ul class="flex flex-col gap-5 pt-5 font-label-caps text-label-caps uppercase">
+      <li><a href="ceramics.html" class="text-zinc-900 font-semibold" data-i18n="nav_ceramics">Ceramics</a></li>
+      <li><a href="references.html" class="text-zinc-700 hover:text-[#A67C52]" data-i18n="nav_references">References</a></li>
+      <li>
+        <div class="flex gap-3 py-1">
+          <button class="lang-btn font-semibold text-on-background hover:text-[#A67C52] transition-colors" data-lang="en">EN</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="ru">RU</button>
+          <span class="text-outline/40">|</span>
+          <button class="lang-btn text-zinc-400 hover:text-[#A67C52] transition-colors" data-lang="az">AZ</button>
+        </div>
+      </li>
+      <li><a href="index.html#contact" class="bg-primary text-white px-6 py-3 inline-block" data-i18n="nav_quote">Get a Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="flex-grow pt-28 pb-32 px-8 md:px-16 max-w-[1440px] mx-auto w-full">
+  <!-- Breadcrumb -->
+  <div class="mb-16">
+    <nav class="flex items-center gap-2 font-label-caps text-label-caps text-surface-tint uppercase mb-5">
+      <a href="index.html" class="hover:text-secondary transition-colors" data-i18n="bc_home">Home</a>
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      <span class="text-on-background" data-i18n="bc_ceramics">Ceramics</span>
+    </nav>
+    <h1 class="font-headline-lg text-headline-lg text-on-background mb-4" style="font-family:'Noto Serif',serif;" data-i18n="ceramics_title">Ceramics Collection</h1>
+    <p class="font-body-md text-body-md text-surface-tint max-w-2xl" data-i18n="ceramics_desc">Explore our curated selection of premium architectural ceramics, designed to elevate spaces with enduring elegance and superior craftsmanship.</p>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-12">
+    <!-- Sidebar -->
+    <aside class="w-full lg:w-1/4 shrink-0">
+      <div class="sticky top-28 space-y-8">
+        <!-- Category -->
+        <div class="border-b border-outline-variant pb-6">
+          <h3 class="font-label-caps text-label-caps text-on-background mb-4 uppercase tracking-widest" data-i18n="filter_category">Category</h3>
+          <div class="space-y-3 font-body-md text-body-md text-surface-tint">
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input checked type="checkbox" class="form-checkbox h-4 w-4 text-primary-container border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_porcelain">Porcelain Stoneware</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_wall_tiles">Wall Tiles</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_outdoor">Outdoor Pavers</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_mosaic_cat">Mosaic</span>
+            </label>
+          </div>
+        </div>
+        <!-- Finish -->
+        <div class="border-b border-outline-variant pb-6">
+          <h3 class="font-label-caps text-label-caps text-on-background mb-4 uppercase tracking-widest" data-i18n="filter_finish">Finish</h3>
+          <div class="space-y-3 font-body-md text-body-md text-surface-tint">
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_matte">Matte</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_polished">Polished</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_textured">Textured</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span data-i18n="filter_lappato">Lappato</span>
+            </label>
+          </div>
+        </div>
+        <!-- Color -->
+        <div class="border-b border-outline-variant pb-6">
+          <h3 class="font-label-caps text-label-caps text-on-background mb-4 uppercase tracking-widest" data-i18n="filter_color">Color</h3>
+          <div class="flex flex-wrap gap-3">
+            <button title="Light Grey" class="w-8 h-8 bg-[#E5E2E1] border border-outline-variant hover:scale-110 transition-transform"></button>
+            <button title="Dark Grey" class="w-8 h-8 bg-[#2C2C2C] border-2 border-primary ring-2 ring-offset-2 ring-primary hover:scale-110 transition-transform"></button>
+            <button title="Medium Grey" class="w-8 h-8 bg-[#C8C6C5] border border-outline-variant hover:scale-110 transition-transform"></button>
+            <button title="White" class="w-8 h-8 bg-[#FDF8F8] border border-outline-variant hover:scale-110 transition-transform"></button>
+            <button title="Brown" class="w-8 h-8 bg-[#7C5730] border border-outline-variant hover:scale-110 transition-transform"></button>
+            <button title="Beige" class="w-8 h-8 bg-[#D8CABC] border border-outline-variant hover:scale-110 transition-transform"></button>
+          </div>
+        </div>
+        <!-- Brand -->
+        <div class="pb-6">
+          <h3 class="font-label-caps text-label-caps text-on-background mb-4 uppercase tracking-widest" data-i18n="filter_brand">Brand</h3>
+          <div class="space-y-3 font-body-md text-body-md text-surface-tint">
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input checked type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span>Keope</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span>Supergres</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span>Kenzai</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-secondary transition-colors">
+              <input type="checkbox" class="form-checkbox h-4 w-4 border-outline-variant rounded-none focus:ring-0"/>
+              <span>Rose Mosaic</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="w-full lg:w-3/4">
+      <div class="flex justify-between items-center mb-10 pb-4 border-b border-outline-variant/50">
+        <span class="font-label-caps text-label-caps text-surface-tint uppercase" data-i18n="sort_products_count">48 Products</span>
+        <select class="font-label-caps text-label-caps text-on-background border-b border-outline-variant bg-transparent focus:outline-none focus:border-primary uppercase tracking-widest pb-1 cursor-pointer">
+          <option data-i18n="sort_label">Sort: Featured</option>
+          <option data-i18n="sort_newest">Newest First</option>
+          <option data-i18n="sort_name">Name A–Z</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16">
+
+        <!-- Card 1 -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gz6Qy4VfytK2IFhhkigr5Ljot035TRKE3lAsoYpqqyl-WWCYSHK0NiPdVLDy3mISHZLCwjNQMdI7zgxka5jgMtokHDB9-jGfK3NklpS6zm-JImQMvRCvFr5b_Agvqu-OUQ78facVD2gveSLJ6VphjZjQrW-0Imy6Fq_a4fGxvGT5ra8MEcy2BTm0jg415yAsHd6EiRo1LaazacoLGq0QDk4TJWbZj7pPeHEvm3jviEk47phsqnHYjNvBgJVyp8OydiUO3hcJkjQ" alt="Interno 9" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Interno 9</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Keope</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">120×240 cm</span>
+          </div>
+        </a>
+
+        <!-- Card 2 (offset) -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block sm:mt-12">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjeOdbsq0Crg6P8tjVAJ-5ks2nif5drQfABXdv3jN3Hm4G79_TytG27XEsIGAFMWFaX1cqxzXja2y4vbKJnDS4wbs2Kr5qIzWmSfMgNdpZpU4-n6715UldQ4d4FAqA2VP4C5B9tt-kOHY_PyhriQNFEr5C_iVvAJ31V9B-JO5vCFgUKwmjbpV63aLZxaxuVWnK2YdG_l8L06d1HKXpfxrte4zARgL3CogafOAg_-4M_cGEUwa3X3CgHSRkMYBdJsZymDGWFpCfWvg" alt="Elements Lux" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Elements Lux</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Keope</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">60×120 cm</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RTxco73ZzXaSxVjX6GNeumJHjnLuhFzrZPmmqRDVbzlFrerux5dhV9tVb4hjEm_4t7QrdwLppJ93HRSzyCHv0_XKx_KaHJtSHLPOn_OYN1wKvVWdgOybl2ve1WZzn9lh2Gzf9MFK6RgXzPodH895OokyQUfqSndmV1jOPudLZOuI_NFowcBHZ3LbkiAMJeEDlmnmh4KGol6MQXwt2Gk4QoW6v1w4emEmM0IF5HM9PR3OLD-8UNhzffccRIRXKDOSlng7l_kPkgM" alt="Dolmen Pro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Dolmen Pro</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Keope</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">80×80 cm</span>
+          </div>
+        </a>
+
+        <!-- Card 4 (offset) -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block sm:mt-12">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJdShFCPO6d2G7FpFgGxtDP7aGsJ-a0c8p71Ue9ybu8qAKMOQtcjPd-Iu4WX5gilDWxcpUn7lbeJLKA76tPfFFb0hSFslbsMXpJ7M9ccHTNHpGT95aW05keqJ9RUuKiGMpZRdnagNXWBvcgYHnBi25d2hXo-EXvdvFUGX44lRhLdTVpf__FNBx862lsMpptOHdH5dX-X3r1akV-x2ft6GLtK0QNa3Wyu1KJHoY_XTPBxn7EQ3Vfwg1y_sPrgF2nrZiCxMHji3YCj0" alt="Moov" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Moov</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Keope</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">120×120 cm</span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTLvH0OK1xh2oeKXF8KDw8VXdvzVrtTfiAOubILlGlrw8VTQ41t9d-i8NuiRnp7Dn96U4v_qtDMUZ-tB1nd8t47mg0umDex-2OQRdFRPav4wiR0gfIm55gjhD8NokWAXa0hF-fgfsGrxXmDkiUbtXN4Rn6SnbGlLB43FT2fQdQo9pvU8jY65YTl9EJALfcU27HZj5JGdPLdY2j-QXltzQfX48GK4A0_z6dWVgDJMy0ObXpWCOaf0nhZYLdBNApy1ydzJA32bS5wS0" alt="Stones & More" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Stones &amp; More</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Florim</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">60×60 cm</span>
+          </div>
+        </a>
+
+        <!-- Card 6 (offset) -->
+        <a href="product.html" class="group flex flex-col cursor-pointer block sm:mt-12">
+          <div class="relative w-full aspect-[4/5] bg-surface-container-high overflow-hidden mb-4">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlcZg9YXkDHaBnBYM7qDUESAEUJZukBoLUhsFlxZ4auoMr8yg0A70mSQJ0C_KaUM4KVTYAnYBm8XFThE3LvWFAzcBsfPQnhsMu7D6CZZMvpTurbtP8VP-u_UeP2SMu6hW5yTwyeYhshOcVnjGeqRorvRkBTHWoEcU7zIIZYMDsrZTDtUDoQB-VRjUipPc-qLrPLP29Zv_NXDRLzPv0loFpqaVVCLSIW7RvGCCyyX2iwiXmAwPUKSxcdgCqmYSeuExM9lhgHCOLUJM" alt="Pinch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-6 py-3 border border-outline-variant hover:bg-secondary hover:text-on-secondary transition-colors uppercase tracking-widest" data-i18n="card_view_details">View Details</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="font-headline-md text-[20px] leading-tight text-on-background mb-1" style="font-family:'Noto Serif',serif;">Pinch</h4>
+              <p class="font-label-caps text-label-caps text-surface-tint uppercase">Marazzi</p>
+            </div>
+            <span class="font-body-md text-body-md text-on-background">30×60 cm</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="mt-20 flex justify-center">
+        <button class="font-label-caps text-label-caps text-on-background border-b border-on-background pb-1 hover:text-secondary hover:border-secondary transition-colors uppercase tracking-widest" data-i18n="load_more_products">Load More Products</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Floating CTA -->
+<div class="fixed bottom-8 right-8 z-40 hidden md:block">
+  <a href="index.html#contact" class="bg-secondary text-on-secondary font-label-caps text-label-caps px-8 py-4 shadow-lg hover:bg-primary-container transition-colors duration-300 flex items-center gap-2 uppercase tracking-widest">
+    <span class="material-symbols-outlined text-[18px]">request_quote</span>
+    <span data-i18n="btn_request_sample">Request a Sample</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-zinc-50 border-t border-zinc-900/5">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 px-8 md:px-16 py-20 max-w-[1920px] mx-auto">
+    <div class="md:col-span-2">
+      <a href="index.html" class="text-xl font-bold text-zinc-900 tracking-tighter block mb-4">Premium Tiles</a>
+      <p class="font-label-caps text-label-caps text-zinc-500 normal-case tracking-normal leading-relaxed max-w-xs" data-i18n="footer_tagline">Curating the finest ceramic surfaces for visionary architectural spaces.</p>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_collections">Collections</span>
+      <a href="ceramics.html" class="text-zinc-900 font-semibold hover:text-[#A67C52] transition-colors" data-i18n="nav_ceramics">Ceramics</a>
+      <a href="ceramics.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_sanitary">Sanitary</a>
+      <a href="references.html" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="nav_references">References</a>
+    </div>
+    <div class="flex flex-col gap-4 font-label-caps text-label-caps uppercase tracking-widest">
+      <span class="text-zinc-900 font-semibold mb-2" data-i18n="footer_company">Company</span>
+      <a href="index.html#contact" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_contact">Contact</a>
+      <a href="#" class="text-zinc-500 hover:text-[#A67C52] transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="border-t border-zinc-900/5 px-8 md:px-16 py-6 flex justify-between items-center max-w-[1920px] mx-auto">
+    <span class="font-label-caps text-label-caps text-zinc-400" data-i18n="footer_copyright">© 2024 Premium Tiles. Architectural Excellence.</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
